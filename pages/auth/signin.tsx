@@ -1,5 +1,5 @@
-import { getProviders, signIn } from 'next-auth/react';
 import { InferGetServerSidePropsType } from 'next';
+import { getProviders, signIn } from 'next-auth/react';
 
 const SignIn = ({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
@@ -14,7 +14,7 @@ const SignIn = ({ providers }: InferGetServerSidePropsType<typeof getServerSideP
                 className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30"
               >
                 <svg
-                  className="mr-3 -ml-1 w-7 h-7"
+                  className="mr-3 -ml-1.5 w-8 h-8"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="fab"
