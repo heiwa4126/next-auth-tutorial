@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.{cmd,[cC][mM][dD]} text eol=crlf encoding=cp932
+*.{bat,[bB][aA][tT]} text eol=crlf encoding=cp932
+*.{reg,[rR][eE][gG]} text eol=crlf encoding=UTF-16LE-BOM
