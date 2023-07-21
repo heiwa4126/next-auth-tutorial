@@ -1,38 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# next-auth-tutorial
 
-## Getting Started
+[【NextAuth.js 入門】認証機能から認証情報によるページの表示制御を学ぶ（Next.js & Typescript）](https://zenn.dev/farstep/books/7a6eb67dd3bf1f)
+をやってみました。(2023-07)
 
-First, run the development server:
+## メモ
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Next.js 13 でやったけど pages dirctory (app dirctoryでない)。
+  - これをやってみる。[Setup and Use NextAuth.js in Next.js 13 App Directory 2023](https://codevoweb.com/setup-and-use-nextauth-in-nextjs-13-app-directory/)
+- Windows11でWSL2
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## アレンジしたところメモ
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `.env*` の扱い。[Configuring: Environment Variables | Next.js](https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables) にもある通り、`.env*.local`が秘密情報。これはgit-crypt使った。ので、decryptしないと実行できません。
+- とりあえずdev環境用に `NODE_TLS_REJECT_UNAUTHORIZED=0` を追加した。これ無いと `This action with HTTP GET is not supported by NextAuth.js` になる。
+- eslintをtrueにしたら`<Link>`の中に`<a>`があるとこで文句言われたので直した。
+- `import '@/'` に変えたとこ多数。
